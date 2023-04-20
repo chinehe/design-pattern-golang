@@ -1,0 +1,6 @@
+package simple
+
+// Expression 表达式接口
+type Expression interface {
+	Interpret() (bool,error)
+}
