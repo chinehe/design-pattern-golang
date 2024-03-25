@@ -1,12 +1,12 @@
 package simple
 
-// NewIRuleConfigParser 工厂方法
-func NewIRuleConfigParser(parserName string) IRuleConfigParser {
-	switch parserName {
-	case "json":
-		return &JsonParser{}
-	case "yaml":
-		return &YamlParser{}
+// NewLogger 创建日志器的简单工厂
+func NewLogger(level string) Logger {
+	switch level {
+	case "Error":
+		return &ErrorLogger{}
+	case "Info":
+		return &InfoLogger{}
 	default:
 		return nil
 	}
