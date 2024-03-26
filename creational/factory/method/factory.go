@@ -1,13 +1,22 @@
-package method
+package simple
 
-// NewIRuleConfigParserFactory 工厂方法的工厂方法
-func NewIRuleConfigParserFactory(parserName string) IRuleConfigParserFactory {
-	switch parserName {
-	case "json":
-		return &JsonParserFactory{}
-	case "yaml":
-		return &YamlParserFactory{}
-	default:
-		return nil
-	}
+// LoggerFactory 抽象工厂
+type LoggerFactory interface {
+	NewLogger() Logger
+}
+
+// InfoLoggerFactory 信息日志工厂
+type InfoLoggerFactory struct {
+}
+
+func (i *InfoLoggerFactory) NewLogger() Logger {
+	return &InfoLogger{}
+}
+
+// ErrorLoggerFactory 错误日志工厂
+type ErrorLoggerFactory struct {
+}
+
+func (i *ErrorLoggerFactory) NewLogger() Logger {
+	return &ErrorLogger{}
 }

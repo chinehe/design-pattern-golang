@@ -1,12 +1,10 @@
-package method
+package simple
 
 import (
 	"testing"
 )
 
-func TestNewIRuleConfigParser(t *testing.T) {
-	jsonParserFactory := NewIRuleConfigParserFactory("json")
-	yamlParserFactory := NewIRuleConfigParserFactory("yaml")
-	jsonParserFactory.Create().Parse([]byte("json"))
-	yamlParserFactory.Create().Parse([]byte("yaml"))
+func TestNewLogger(t *testing.T) {
+	new(InfoLoggerFactory).NewLogger().Println("Hello")
+	new(ErrorLoggerFactory).NewLogger().Println("Hello")
 }
