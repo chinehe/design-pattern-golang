@@ -1,4 +1,4 @@
-package simple
+package builder
 
 import (
 	"testing"
@@ -11,5 +11,5 @@ func TestResourcePoolConfigBuilder(t *testing.T) {
 	builder.SetMaxIdle(10)
 	builder.SetMinIdle(10)
 	config := builder.Build()
-	t.Logf("config:%+v",config)
+	t.Logf("config:%+v", config)
 }
