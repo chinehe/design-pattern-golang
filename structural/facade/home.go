@@ -1,19 +1,19 @@
-package simple
+package facade
 
 import "fmt"
 
 // Home 家(外观类)
 type Home struct {
 	SecurityCamera *SecurityCamera
-	Light *Light
-	Sound *Sound
+	Light          *Light
+	Sound          *Sound
 }
 
 func NewHome(securityCamera *SecurityCamera, light *Light, sound *Sound) *Home {
 	return &Home{SecurityCamera: securityCamera, Light: light, Sound: sound}
 }
 
-func (home *Home) ComeBack()  {
+func (home *Home) ComeBack() {
 	fmt.Println("come back...")
 	home.Light.On()
 	home.SecurityCamera.Off()
@@ -21,7 +21,7 @@ func (home *Home) ComeBack()  {
 	home.Sound.Start()
 }
 
-func (home *Home) Leave()  {
+func (home *Home) Leave() {
 	fmt.Println("leave...")
 	home.Light.Off()
 	home.SecurityCamera.On()
