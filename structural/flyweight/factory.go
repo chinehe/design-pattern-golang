@@ -1,4 +1,4 @@
-package simple
+package flyweight
 
 // pieces 缓存的棋子
 var pieces = map[string]*ChessPiece{
@@ -8,7 +8,6 @@ var pieces = map[string]*ChessPiece{
 
 // ChessPieceFactory 棋子工厂
 type ChessPieceFactory struct {
-
 }
 
 func (factory ChessPieceFactory) Create(color string) *ChessPiece {
