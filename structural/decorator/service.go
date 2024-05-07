@@ -1,4 +1,4 @@
-package inherit
+package decorator
 
 // Service 服务接口
 type Service interface {

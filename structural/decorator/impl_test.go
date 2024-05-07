@@ -1,4 +1,4 @@
-package inherit
+package decorator
 
 import "testing"
 

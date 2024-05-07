@@ -1,10 +1,9 @@
-package inherit
+package decorator
 
 import "fmt"
 
 // MyService 服务接口实现类
 type MyService struct {
-
 }
 
 func (m *MyService) ServiceA() {
@@ -17,7 +16,6 @@ func (m *MyService) ServiceB() {
 
 // MyDecoratedService 装饰后的服务接口的实现类
 type MyDecoratedService struct {
-
 }
 
 func (m *MyDecoratedService) ServiceA() {
@@ -31,5 +29,3 @@ func (m *MyDecoratedService) ServiceB() {
 func (m *MyDecoratedService) ServiceC() {
 	fmt.Printf("MyDecoratedService serviceC\n")
 }
-
-
