@@ -1,13 +1,15 @@
 package impl
 
-import "design-pattern-golang/behavioral/visitor/simple"
+import (
+	"design-pattern-golang/behavioral/visitor"
+)
 
 // TxtFile TXT文件（具体被观察者）
 type TxtFile struct {
 	Path string
 }
 
-func (file *TxtFile) Accept(printer simple.ResourceFileVisitor) error {
+func (file *TxtFile) Accept(printer visitor.ResourceFileVisitor) error {
 	return printer.Visit(file)
 }
 
@@ -16,7 +18,6 @@ type CsvFile struct {
 	Path string
 }
 
-func (file *CsvFile) Accept(printer simple.ResourceFileVisitor) error {
+func (file *CsvFile) Accept(printer visitor.ResourceFileVisitor) error {
 	return printer.Visit(file)
 }
-
