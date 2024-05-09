@@ -1,4 +1,4 @@
-package simple
+package state
 
 import "fmt"
 
@@ -11,7 +11,7 @@ func (state *NewState) Start() {
 	fmt.Println("start...")
 }
 
-func (state *NewState) GetState() string{
+func (state *NewState) GetState() string {
 	return "new"
 }
 
@@ -20,7 +20,7 @@ type RunnableState struct {
 	State
 }
 
-func (state *RunnableState) GetState() string{
+func (state *RunnableState) GetState() string {
 	return "runnable"
 }
 
@@ -32,14 +32,15 @@ func (state *RunnableState) GetTimeSlice() {
 type RunningState struct {
 	State
 }
-func (state *RunningState) GetState() string{
+
+func (state *RunningState) GetState() string {
 	return "running"
 }
-func (state *RunningState) Suspend()  {
+func (state *RunningState) Suspend() {
 	fmt.Println("suspend...")
 }
 
-func (state *RunningState) Stop()  {
+func (state *RunningState) Stop() {
 	fmt.Println("stop...")
 }
 
@@ -47,10 +48,11 @@ func (state *RunningState) Stop()  {
 type BlockState struct {
 	State
 }
-func (state *BlockState) GetState() string{
+
+func (state *BlockState) GetState() string {
 	return "block"
 }
-func (state *BlockState) Resume()  {
+func (state *BlockState) Resume() {
 	fmt.Println("resume...")
 }
 
@@ -58,7 +60,7 @@ func (state *BlockState) Resume()  {
 type DeadState struct {
 	State
 }
-func (state *DeadState) GetState() string{
+
+func (state *DeadState) GetState() string {
 	return "dead"
 }
-
