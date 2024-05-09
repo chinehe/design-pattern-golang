@@ -1,4 +1,4 @@
-package static
+package proxy
 
 import (
 	"fmt"
@@ -15,6 +15,6 @@ func TestUserProxy_Login(t *testing.T) {
 	}
 	err := proxy.Login()
 	if err != nil {
-		fmt.Printf("error:%v\n",err)
+		fmt.Printf("error:%v\n", err)
 	}
 }

@@ -1,4 +1,4 @@
-package static
+package proxy
 
 import "fmt"
 
@@ -12,17 +12,16 @@ func NewUserProxy(user *User) *UserProxy {
 }
 
 func (u *UserProxy) Login() error {
-	if u.User.UserID=="" {
+	if u.User.UserID == "" {
 		return fmt.Errorf("userID is empty\n")
 	}
-	if u.User.UserName=="" {
+	if u.User.UserName == "" {
 		return fmt.Errorf("userName is empty\n")
 	}
-	if u.User.Password=="" {
+	if u.User.Password == "" {
 		return fmt.Errorf("password is empty\n")
 	}
 	u.User.Login()
-	fmt.Printf("user login success:userID:%s,userName:%s,password:%s\n",u.User.UserID,u.User.UserName,u.User.Password)
+	fmt.Printf("user login success:userID:%s,userName:%s,password:%s\n", u.User.UserID, u.User.UserName, u.User.Password)
 	return nil
 }
-
