@@ -1,4 +1,4 @@
-package simple
+package memento
 
 import (
 	"fmt"
@@ -17,25 +17,25 @@ func NewFile() *File {
 	}
 }
 
-func (file *File) Append(value string)  {
+func (file *File) Append(value string) {
 	file.save()
-	file.content +=value
+	file.content += value
 }
 
-func (file *File) Modify(old,new string)  {
+func (file *File) Modify(old, new string) {
 	file.save()
-	file.content  = strings.ReplaceAll(file.content,old,new)
+	file.content = strings.ReplaceAll(file.content, old, new)
 }
 
-func (file *File) Print()  {
+func (file *File) Print() {
 	fmt.Println("------------")
 	fmt.Println(file.content)
 }
 
-func (file *File) save()  {
+func (file *File) save() {
 	file.memento.Push(file.content)
 }
 
-func (file *File) Restore()  {
+func (file *File) Restore() {
 	file.content = file.memento.Pop()
 }
