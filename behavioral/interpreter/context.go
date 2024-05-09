@@ -1,4 +1,4 @@
-package simple
+package interpreter
 
 // ExpressionContext 表达式上下文
 type ExpressionContext struct {
@@ -8,6 +8,3 @@ type ExpressionContext struct {
 func (exp *ExpressionContext) Interpret() (bool, error) {
 	return (&LogicExpression{Content: exp.Content}).Interpret()
 }
-
-
-
