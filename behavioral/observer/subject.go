@@ -1,4 +1,4 @@
-package simple
+package observer
 
 // Subject 订阅主题接口
 type Subject interface {
