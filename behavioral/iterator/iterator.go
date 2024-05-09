@@ -1,4 +1,4 @@
-package simple
+package iterator
 
 // IntIterator 整型迭代器接口
 type IntIterator interface {
