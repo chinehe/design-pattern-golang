@@ -1,4 +1,4 @@
-package simple
+package template
 
 import "fmt"
 
@@ -9,7 +9,7 @@ type BankServiceTemplate struct {
 
 // Service 服务模板方法
 // 注意这里需要传入服务子类，因为Go语言中没有抽象方法
-func (template *BankServiceTemplate) Service(t BankService)  {
+func (template *BankServiceTemplate) Service(t BankService) {
 	t.TakeNumber()
 	t.LineUp()
 	t.HandleBusiness()
@@ -28,4 +28,3 @@ func (template BankServiceTemplate) LineUp() {
 func (template BankServiceTemplate) Rate() {
 	fmt.Println("客户评分")
 }
-
