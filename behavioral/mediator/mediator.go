@@ -1,4 +1,4 @@
-package simple
+package mediator
 
 // Mediator 中介者接口
 type Mediator interface {

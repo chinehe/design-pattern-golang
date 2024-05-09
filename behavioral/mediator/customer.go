@@ -1,4 +1,4 @@
-package simple
+package mediator
 
 // Customer 客户接口
 type Customer interface {
